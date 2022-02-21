@@ -1,0 +1,97 @@
+game.StarterGui:SetCore("SendNotification", {
+		Title = "EnternityTrip"; -- 
+		Text = "Thank you for use EternityTrip"; 
+		Duration = 10; -- 
+		})
+wait(1)
+
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local Frame = Instance.new("Frame")
+local Load = Instance.new("TextButton")
+local UIGradient = Instance.new("UIGradient")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(7, 7, 7)
+Main.Position = UDim2.new(0.387323916, 0, 0.171900824, 0)
+Main.Size = UDim2.new(0, 255, 0, 397)
+
+ImageLabel.Parent = Main
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.Position = UDim2.new(0.194565326, 0, 0.0554156154, 0)
+ImageLabel.Size = UDim2.new(0, 155, 0, 153)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=8882131660"
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.105882354, 0, 0.420654893, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Font = Enum.Font.RobotoMono
+TextLabel.Text = "WARNING!"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
+
+TextLabel_2.Parent = Main
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.105882354, 0, 0.501259446, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Font = Enum.Font.RobotoMono
+TextLabel_2.Text = "EternityTrip only for Counter Blox"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 14.000
+
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(12, 12, 138)
+Frame.Position = UDim2.new(0, 0, -0.0176322423, 0)
+Frame.Size = UDim2.new(0, 255, 0, 7)
+
+Load.Name = "Load"
+Load.Parent = ScreenGui
+Load.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Load.Position = UDim2.new(0.417426229, 0, 0.575733364, 0)
+Load.Size = UDim2.new(0, 164, 0, 46)
+Load.Font = Enum.Font.RobotoMono
+Load.Text = "Load"
+Load.TextColor3 = Color3.fromRGB(107, 101, 96)
+Load.TextSize = 14.000
+Load.MouseButton1Click:Connect(function()
+	Main.Visible = false
+	Load.Visible = false
+	wait(1,0)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EternityTrip/EternityTrip/main/EternityTrip"))()
+end)
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(84, 72, 221)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(29, 37, 116))}
+UIGradient.Rotation = 91
+UIGradient.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.00), NumberSequenceKeypoint.new(0.45, 0.00), NumberSequenceKeypoint.new(0.56, 0.00), NumberSequenceKeypoint.new(0.69, 0.00), NumberSequenceKeypoint.new(1.00, 0.00)}
+UIGradient.Parent = Load
+
+-- Scripts:
+
+local function ZZRF_fake_script() -- Load.LocalScript 
+	local script = Instance.new('LocalScript', Load)
+
+	local Main = script.Parent.Parent.Main
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		Main.Visible = false
+	end)
+	
+	local Load = script.Parent.Parent.Load
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		Load.Visible = false
+	end)
+end
+coroutine.wrap(ZZRF_fake_script)()
